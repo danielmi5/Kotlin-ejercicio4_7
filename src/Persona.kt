@@ -44,7 +44,7 @@ class Persona(val nombre: String ,val dni: String) {
 
             for (i in listaCuentasBancarias.indices){
                 val cuenta = persona2.listaCuentasBancarias[i]
-                if (cuenta?.numCuenta == numCuenta1){
+                if (cuenta?.numCuenta == numCuenta2){
                     if (cuenta.realizarAbono(cantidad)) completado = true
                 }
             }
@@ -55,12 +55,17 @@ class Persona(val nombre: String ,val dni: String) {
         }
 
         return completado
-
-
-
     }
 
 
-
-
+    override fun toString(): String {
+        var cont = 0
+        var cuentas: String = "["
+        for (i in listaCuentasBancarias){
+            ++cont
+            if (i != null) cuentas += "$i, "
+        }
+        cuentas = cuentas.substring(0, cuentas.length - 2)+"]"
+        return "Persona(nombre='$nombre', DNI=$dni, cuentas=$cuentas)"
+    }
 }

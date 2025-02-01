@@ -10,15 +10,12 @@ class Cuenta(val numCuenta: String, var saldo: Double = 0.0) {
     }
 
     fun realizarPago(coste: Double): Boolean{
-        if (saldo - coste < 0) throw IllegalArgumentException("Saldo insuficiente") else {
-            saldo-= coste
-            return true
-        }
+        saldo-= coste
+        return true
+
     }
 
-
-
-
-
-
+    override fun toString(): String {
+        return "Cuenta(numCuenta='$numCuenta', saldo=$saldo)"
+    }
 }

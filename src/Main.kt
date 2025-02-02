@@ -1,6 +1,6 @@
 
 fun main(){
-    val persona = Persona("Juan","111111111B")
+    val persona = Persona("Juan","11111111B")
     val cuenta1 = Cuenta("111",)
     val cuenta2 = Cuenta("02", 700.0)
 
@@ -22,6 +22,6 @@ fun main(){
 
     if (persona.esMorosa()) println("${persona.nombre} es una persona morosa") else println("${persona.nombre} no es una persona morosa")
 
-        println("El estado de persona:\n$persona")
+    println("El estado de persona:\n$persona")
 
 }

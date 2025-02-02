@@ -30,6 +30,9 @@ class Persona(val nombre: String ,val dni: String) {
         return false
     }
 
+    init {
+        require(dni.matches(Regex("^\\d{8}[A-Z]\$"))) {"DNI incorrecto"}
+    }
     fun realizarTransferencia(persona2: Persona, numCuenta1: String, numCuenta2: String, cantidad: Double): Boolean{
         //Igual que en la función esMorosa
         val persona1 = this
